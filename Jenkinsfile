@@ -15,4 +15,4 @@ stages {
                          sh label: '', script: 'mvn clean install -Dspring.profiles.active=uat' 
                   }
                   
-              }
+  }}

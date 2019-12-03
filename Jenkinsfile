@@ -7,6 +7,7 @@ stages {
            steps {
                 sh "echo ${params.URL}"
                 sh "echo ${params.branch}"
+                sh "echo ${params.target}"
             }
         }
   

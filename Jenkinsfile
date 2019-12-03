@@ -20,7 +20,7 @@ stages {
   
   stage ('Build With Maven'){
                   steps {
-                         sh label: '', script: 'mvn "${params.target}"' 
+                         sh label: '', script: "mvn ${params.target}"
                   }
                   
   }}}

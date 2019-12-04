@@ -28,11 +28,7 @@ stages {
 
 stage ('Deploy on DeployServer') {
                         steps  {			  
-							             sh label: '', script: '''scp "${env.WORKSPACE}"/target/*.jar root@10.48.5.44:/tmp
-													 ssh root@10.48.5.44 /bin/bash "
-													 hostname;
-													 ls -ltr;
-													 "'''			  
+				sh label: '', script: '''scp ${WORKSPACE}/target/*.jar root@10.48.5.44:/tmp'''			  
 			  }
 			  
 		}}}

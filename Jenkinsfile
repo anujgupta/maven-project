@@ -9,6 +9,7 @@ stages {
                 sh "echo ${params.branch}"
                 sh "echo ${params.target}"
                 sh "echo ${env.WORKSPACE}"
+		sh "echo ${params.deployserver}"
             }
         }
   
@@ -28,7 +29,7 @@ stages {
 
 stage ('Deploy on DeployServer') {
                         steps  {			  
-				sh label: '', script: '''scp ${WORKSPACE}/target/*.jar root@10.48.5.44:/tmp'''			  
+				sh label: '', script: '''scp ${WORKSPACE}/target/*.jar "${params.deployserver}":/tmp'''			  
 			  }
 			  
 		}}}

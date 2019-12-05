@@ -29,7 +29,7 @@ stages {
 
 stage ('Deploy on DeployServer') {
                         steps  {			  
-				sh label: '', script: '''scp ${WORKSPACE}/target/*.jar "${params.deployserver}":/tmp'''			  
+				sh label: '', script: "scp ${WORKSPACE}/target/*.jar ${params.deployserver}:/tmp"			  
 			  }
 			  
 		}}}
